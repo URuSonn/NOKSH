@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>
-          <h1>IndexPage</h1>
+          <h1>IndexPage:NOKSH</h1>
           <Header />
         </div>
         <NextImage />
