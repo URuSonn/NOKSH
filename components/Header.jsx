@@ -14,7 +14,7 @@ export function Header(props) {
         <UsingFunction />
       </div>
       <ContactLinks />
-      <hr className={classes.Line} />
+      {/* <hr className={classes.Line} /> */}
     </>
   );
 }
