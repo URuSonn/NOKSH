@@ -1,0 +1,25 @@
+.Contact {
+  list-style: none;
+  color: white;
+  margin: 30px 0 0 0;
+  align-items: left;
+}
+.Contact li {
+  padding: 3px;
+  border: 1px solid white;
+  border-radius: 6px;
+  min-width: 90px;
+}
+.Contact li:hover {
+  color: black;
+  border: 1px solid white;
+  background-color: white;
+  cursor: pointer;
+}
+
+.Line {
+  margin: 0.5rem 0 1rem 0;
+  width: 100%;
+  border-width: 1px;
+  border-color: rgba(251, 75, 0, 0.63);
+}
