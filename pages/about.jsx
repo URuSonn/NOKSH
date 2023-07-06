@@ -20,8 +20,6 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} />
-        <NextImage />
-        <DocsGrid />
       </main>
     </>
   );
