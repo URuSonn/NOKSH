@@ -13,7 +13,20 @@ export function Header(props) {
       <div className={styles.description}>
         <Typography
           component="h1"
-          style={{ color: `${color}`, fontWeight: "bold" }}>
+          style={{
+            color: `${color}`,
+            fontWeight: "bold",
+            textShadow: `0 1px #bbb,
+          1px 3px #333,
+          2px 5px #999,
+          3px 7px #222,
+          4px 9px #777,
+          5px 11px #111,
+          6px 13px #555,
+          7px 15px #000,
+          8px 16px #333,
+          9px 16px 8px #000`,
+          }}>
           {title}
         </Typography>
         <UsingFunction />

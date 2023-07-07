@@ -2,10 +2,17 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import stylesAA from "../components/AAA.module.css";
-import { DocsGrid } from "@/components/DocsGrid";
 import { Header } from "@/components/Header";
-import { EVENT_PAGE_TITLE } from "@/utils/path";
-import { Container, List, ListItem, Typography } from "@mui/material";
+import { EVENTS_PROPS, EVENT_PAGE_TITLE } from "@/utils/path";
+import FlightIcon from "@mui/icons-material/Flight";
+import {
+  Box,
+  Container,
+  Icon,
+  ImageList,
+  ImageListItem,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
@@ -15,6 +22,12 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const title = EVENT_PAGE_TITLE;
   const pageColor = `radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)`;
+
+  const ImageArray = EVENTS_PROPS.map((item, index) => {
+    return item.imageData;
+  });
+  console.log(ImageArray[0]);
+
   return (
     <>
       <Head>
@@ -25,81 +38,109 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} color={pageColor} />
-        <h2>EVENT</h2>
+
         <Container
           sx={{
             display: "flex",
             justifyContent: "flex-start",
             flexDirection: "column",
+            backgroundColor: "rgba(89, 90, 90, 0.908)",
+            padding: "5rem",
           }}>
+          <Typography component="h2" sx={{ textAlign: "center" }}>
+            EVENTS
+          </Typography>
           <Typography
             component="h2"
             sx={{ fontSize: "2rem", fontWeight: "bold" }}>
             CALENDER
           </Typography>
 
-          <Link href="AAA">
-            <div
-              className={stylesAA.AAA}
-              style={{
-                color: "white",
-                display: "flex",
-                borderBottom: "1px solid white",
-                alignItems: "center",
-                height: "45px",
-                padding: "0 20px",
-              }}>
-              <div style={{ width: "20%" }}>2020.01.01（月）</div>
-              <div style={{ width: "30%" }}>鎌倉 - 江ノ島</div>
-            </div>
-          </Link>
-
-          <Image
-            src="/AAA.png"
-            alt="border"
-            width={1}
-            height={150}
-            style={{ marginTop: "30px" }}
-          />
-          <Link href="AAA">
-            <div
-              className={stylesAA.AAA}
-              style={{
-                color: "white",
-                display: "flex",
-                borderBottom: "1px solid white",
-                alignItems: "center",
-                height: "45px",
-                padding: "0 20px",
-              }}>
-              <div style={{ width: "20%" }}>2023.08.19 （土）</div>
-              <div style={{ width: "30%" }}>鎌倉 - 江ノ島</div>
-            </div>
-          </Link>
-          <Image
-            src="/AAA.png"
-            alt="border"
-            width={1}
-            height={150}
-            style={{ marginTop: "30px" }}
-          />
-          <Link href="AAA">
-            <div
-              className={stylesAA.AAA}
-              style={{
-                color: "white",
-                display: "flex",
-                borderBottom: "1px solid white",
-                alignItems: "center",
-                height: "45px",
-                padding: "20px",
-                ":hover": { borderLeft: "1px solid white" },
-              }}>
-              <div style={{ width: "20%" }}>2023.08.19 （土）</div>
-              <div style={{ width: "30%" }}>越谷レイクタウン VsPark</div>
-            </div>
-          </Link>
+          {EVENTS_PROPS.map((event, index) => {
+            return (
+              <Box
+                sx={{
+                  margin: "10px 70px",
+                  "&:last-of-type": { backgroundColor: "gray" },
+                }}
+                key={index}>
+                <Link href={event.eventLink}>
+                  <div
+                    className={stylesAA.AAA}
+                    style={{
+                      color: "white",
+                      display: "flex",
+                      borderBottom: "1px solid white",
+                      alignItems: "center",
+                      height: "45px",
+                      padding: "0 20px",
+                    }}>
+                    <div style={{ width: "20%" }}>{event.date}</div>
+                    <div
+                      style={{
+                        width: "30%",
+                        fontWeight: "bold",
+                        whiteSpace: "nowrap",
+                      }}>
+                      {event.eventTitle}
+                    </div>
+                    <Icon sx={{ marginLeft: "auto" }}>
+                      {event.icon ?? <FlightIcon />}
+                      {/* {events.icon ?events.icon: <FlightIcon />} これの省略記法*/}
+                    </Icon>
+                  </div>
+                  <Typography sx={{ textAlign: "right" }}>
+                    Location : {event.eventLocation}
+                  </Typography>
+                </Link>
+                <Box sx={{ display: "flex" }}>
+                  <Image
+                    src="/AAA.png"
+                    alt="border"
+                    width={1}
+                    height={100}
+                    style={{
+                      marginTop: "30px",
+                    }}
+                  />
+                  <ImageList
+                    sx={{
+                      width: "100%",
+                      height: 150,
+                      // backgroundColor: "green",
+                      marginLeft: "20px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      maxWidth: "900px",
+                    }}
+                    cols={3}
+                    rowHeight={164}>
+                    {ImageArray[0].map((images, index) => {
+                      return (
+                        <ImageListItem
+                          maxWidth="a00%"
+                          key={index}
+                          sx={{
+                            maxHeight: "70px",
+                            margin: "0 40px",
+                          }}>
+                          <img
+                            src={images.Image}
+                            srcSet={images.Image}
+                            alt={images.title}
+                            loading="lazy"
+                            style={{ height: "150px", width: "150px" }}
+                          />
+                        </ImageListItem>
+                      );
+                    })}
+                  </ImageList>
+                </Box>
+              </Box>
+            );
+          })}
         </Container>
+
         <Footer />
       </main>
     </>

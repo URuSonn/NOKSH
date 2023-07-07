@@ -6,6 +6,7 @@ import { NextImage } from "@/components/NextImage";
 import { Header } from "@/components/Header";
 import { ABOUT_PAGE_TITLE } from "@/utils/path";
 import { Footer } from "@/components/Footer";
+import { Container, Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,25 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} />
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "gray",
+            padding: "30px 0",
+          }}>
+          <Typography sx={{ width: "50%" }}>
+            えーーー、このページは、、、そうすね <br />
+            フロント側での作業を勉強するのを兼ねて、作ってみてます。 <br />
+            機能とかを学びながらつけたりしています。 <br />
+            勉強で知ったやつをとりあえず、つけてみてますので、ダサいです😂
+            <br />
+            一応公開してはいますが、
+            <br />
+            顔の写真をなるべくつけないようにしていきます。
+            <br />
+          </Typography>
+        </Container>
         <Footer />
       </main>
     </>
