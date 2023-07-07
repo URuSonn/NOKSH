@@ -5,14 +5,16 @@ import stylesAA from "../components/AAA.module.css";
 import { DocsGrid } from "@/components/DocsGrid";
 import { Header } from "@/components/Header";
 import { EVENT_PAGE_TITLE } from "@/utils/path";
-import { Container, TableBody, TableCell, TableContainer } from "@mui/material";
+import { Container, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const title = EVENT_PAGE_TITLE;
+  const pageColor = `radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)`;
   return (
     <>
       <Head>
@@ -22,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <Header title={title} />
+        <Header title={title} color={pageColor} />
         <h2>EVENT</h2>
         <Container
           sx={{
@@ -30,7 +32,11 @@ export default function Home() {
             justifyContent: "flex-start",
             flexDirection: "column",
           }}>
-          <div>カレンダー</div>
+          <Typography
+            component="h2"
+            sx={{ fontSize: "2rem", fontWeight: "bold" }}>
+            CALENDER
+          </Typography>
 
           <Link href="AAA">
             <div
@@ -94,6 +100,7 @@ export default function Home() {
             </div>
           </Link>
         </Container>
+        <Footer />
       </main>
     </>
   );

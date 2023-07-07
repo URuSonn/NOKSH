@@ -5,6 +5,7 @@ import { NextImage } from "@/components/NextImage";
 import { DocsGrid } from "@/components/DocsGrid";
 import { Header } from "@/components/Header";
 import { ALBUM_PAGE_TITLE } from "@/utils/path";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} />
         <div>Album</div>
+        <Footer />
       </main>
     </>
   );
