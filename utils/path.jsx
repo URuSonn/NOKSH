@@ -27,6 +27,11 @@ export const EVENTS_PROPS = [
     eventLink: "/enosima1",
     icon: <LuggageIcon />,
     eventLocation: "神奈川県鎌倉",
+    imageData: [
+      { Image: "https://picsum.photos/200/201", Text: "AAA" },
+      { Image: "https://picsum.photos/201/202", Text: "AAA" },
+      { Image: "https://picsum.photos/199/193", Text: "AAA" },
+    ],
   },
   {
     date: "2023/06/09",
@@ -34,6 +39,11 @@ export const EVENTS_PROPS = [
     eventLink: "/enosima1",
     icon: <ChurchIcon />,
     eventLocation: "東京都豊洲",
+    imageData: [
+      { Image: "https://picsum.photos/200/202", Text: "AAA" },
+      { Image: "https://picsum.photos/201/203", Text: "AAA" },
+      { Image: "https://picsum.photos/199/200", Text: "AAA" },
+    ],
   },
   {
     date: "2023/08/19",
@@ -41,5 +51,10 @@ export const EVENTS_PROPS = [
     eventLink: "/enosima1",
     icon: <LuggageIcon />,
     eventLocation: "埼玉県越谷",
+    imageData: [
+      { Image: "https://picsum.photos/200/203", Text: "AAA" },
+      { Image: "https://picsum.photos/201/200", Text: "AAA" },
+      { Image: "https://picsum.photos/199/198", Text: "AAA" },
+    ],
   },
 ];

@@ -6,11 +6,19 @@ import { DocsGrid } from "@/components/DocsGrid";
 import { Header } from "@/components/Header";
 import { INDEX_PAGE_TITLE } from "@/utils/path";
 import { Footer } from "@/components/Footer";
+import { Box, Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const title = INDEX_PAGE_TITLE;
+  const DEMO_LIST = [
+    "あああああああああ",
+    "いいいいいい",
+    "うううううう",
+    "えええええええ",
+    "おおおおおおおお",
+  ];
   return (
     <>
       <Head>
@@ -21,6 +29,22 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} />
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          {DEMO_LIST.map((text) => {
+            return (
+              <Typography
+                sx={{
+                  "&::after": {
+                    background: "green",
+                    content: '"iii"',
+                    borderBottom: "1px solid white",
+                  },
+                }}>
+                {text}
+              </Typography>
+            );
+          })}
+        </Box>
         <Footer />
       </main>
     </>
