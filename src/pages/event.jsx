@@ -1,15 +1,12 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "@/src/styles/Home.module.css";
 
-import { Header } from "@/components/Header";
-import { EVENTS_PROPS, EVENT_PAGE_TITLE } from "@/utils/path";
-import FlightIcon from "@mui/icons-material/Flight";
+import { Header } from "@/src/components/Header";
+import { EVENT_PAGE_TITLE } from "@/src/utils/path";
 import { Container, Typography } from "@mui/material";
-import Image from "next/image";
-import Link from "next/link";
-import { Footer } from "@/components/Footer";
-import { EventList } from "@/components/EventList";
+import { Footer } from "@/src/components/Footer";
+import { EventList } from "@/src/components/EventList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,13 +33,10 @@ export default function Home() {
             backgroundColor: "rgba(89, 90, 90, 0.908)",
             padding: "5rem",
           }}>
-          <Typography component="h2" sx={{ textAlign: "center" }}>
-            EVENTS
-          </Typography>
           <Typography
             component="h2"
-            sx={{ fontSize: "2rem", fontWeight: "bold" }}>
-            CALENDER
+            sx={{ textAlign: "center", fontSize: "40px" }}>
+            EVENTS
           </Typography>
 
           <EventList />

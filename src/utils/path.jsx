@@ -7,7 +7,7 @@ export const ABOUT_PAGE_TITLE = "About Page";
 export const EVENT_PAGE_TITLE = "Event Page";
 export const ALBUM_PAGE_TITLE = "Album Page";
 
-//イベントが追加後に追加
+//イベントが追加後に更新
 export const EVENTS_PROPS = [
   {
     date: "2020/02/02",
@@ -48,7 +48,7 @@ export const EVENTS_PROPS = [
   {
     date: "2023/08/19",
     eventTitle: "レイクタウンVsPark",
-    eventLink: "/enosima1",
+    eventLink: "/eventdetailpage",
     icon: <LuggageIcon />,
     eventLocation: "埼玉県越谷",
     imageData: [

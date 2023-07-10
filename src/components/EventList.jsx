@@ -1,8 +1,9 @@
 import { Box, Icon, ImageList, ImageListItem, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-import { EVENTS_PROPS } from "@/utils/path";
+import { EVENTS_PROPS } from "@/src/utils/path";
 import stylesAA from "../components/AAA.module.css";
+import FlightIcon from "@mui/icons-material/Flight";
 
 export function EventList() {
   console.log("AAA", EVENTS_PROPS);
@@ -49,7 +50,7 @@ export function EventList() {
                   {/* {events.icon ?events.icon: <FlightIcon />} これの省略記法*/}
                 </Icon>
               </div>
-              <Typography sx={{ textAlign: "right" }}>
+              <Typography sx={{ textAlign: "right", marginRight: "20px" }}>
                 Location : {event.eventLocation}
               </Typography>
             </Link>
@@ -65,11 +66,13 @@ export function EventList() {
               />
               <ImageList
                 sx={{
-                  width: "auto",
+                  width: "100%",
                   height: 150,
                   marginLeft: "20px",
                   display: "flex",
                   maxWidth: "900px",
+                  justifyContent: "space-between",
+                  marginTop: "20px",
                 }}
                 cols={3}
                 rowHeight={164}>

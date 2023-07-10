@@ -1,11 +1,9 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import { NextImage } from "@/components/NextImage";
-import { DocsGrid } from "@/components/DocsGrid";
-import { Header } from "@/components/Header";
-import { ALBUM_PAGE_TITLE } from "@/utils/path";
-import { Footer } from "@/components/Footer";
+import styles from "@/src/styles/Home.module.css";
+import { Header } from "@/src/components/Header";
+import { ALBUM_PAGE_TITLE } from "@/src/utils/path";
+import { Footer } from "@/src/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
