@@ -4,18 +4,18 @@ import styles from "@/src/styles/Home.module.css";
 import { Header } from "@/src/components/Header";
 import { INDEX_PAGE_TITLE } from "@/src/utils/path";
 import { Footer } from "@/src/components/Footer";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const title = INDEX_PAGE_TITLE;
   const DEMO_LIST = [
-    "あああああああああ",
+    "ああああああ",
     "いいいいいい",
     "うううううう",
-    "えええええええ",
-    "おおおおおおおお",
+    "ええええええ",
+    "おおおおおお",
   ];
   return (
     <>
@@ -27,15 +27,21 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} />
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}>
           {DEMO_LIST.map((text) => {
             return (
               <Typography
                 sx={{
-                  "&::after": {
+                  marginBottom: "4px",
+                  "&::before": {
                     background: "green",
                     content: '"iii"',
                     borderBottom: "1px solid white",
+                    marginRight: "20px",
                   },
                 }}>
                 {text}
@@ -43,6 +49,14 @@ export default function Home() {
             );
           })}
         </Box>
+        <Button
+          sx={{ backgroundColor: "white", marginTop: "2rem" }}
+          onClick={(event) => {
+            event.preventDefault;
+            alert(event.target.href);
+          }}>
+          ボタン
+        </Button>
         <Footer />
       </main>
     </>

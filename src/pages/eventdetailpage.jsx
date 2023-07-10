@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/src/styles/Home.module.css";
-import { Header } from "@/src/components/Header";
+// import { Header } from "@/src/components/Header";
 import { EVENTS_PROPS } from "@/src/utils/path";
 import { Box, Typography } from "@mui/material";
+import { Header } from "@/src/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
