@@ -67,7 +67,6 @@ export function EventList() {
               <ImageList
                 sx={{
                   width: "100%",
-                  height: 150,
                   marginLeft: "20px",
                   display: "flex",
                   maxWidth: "900px",
@@ -75,22 +74,26 @@ export function EventList() {
                   marginTop: "20px",
                 }}
                 cols={3}
-                rowHeight={164}>
+                rowHeight={170}>
                 {ImageArray[index].map((images, index) => {
                   return (
                     <ImageListItem
                       maxWidth="100%"
                       key={index}
                       sx={{
-                        maxHeight: "70px",
                         margin: "0 40px",
+                        width: "150px",
                       }}>
                       <img
                         src={images.Image}
                         srcSet={images.Image}
                         alt={images.title}
                         loading="lazy"
-                        style={{ height: "150px", width: "150px" }}
+                        style={{
+                          height: "100%",
+                          width: "100%",
+                          objectFit: "contain",
+                        }}
                       />
                     </ImageListItem>
                   );
