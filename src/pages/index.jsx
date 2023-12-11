@@ -10,13 +10,75 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const title = INDEX_PAGE_TITLE;
-  const DEMO_LIST = [
-    "ああああああ",
-    "いいいいいい",
-    "うううううう",
-    "ええええええ",
-    "おおおおおお",
+  const DEMO_LIST = ["リストタイトル"];
+
+  const images = [
+    { height: "20px", width: "40px" },
+    { height: "34px", width: "56px" },
+    { height: "28px", width: "64px" },
   ];
+  const answerArray = images.map((item) => item.height);
+  console.log("answer", answerArray);
+
+  const members = [
+    { name: "松井", age: 39, gender: "male" },
+    { name: "今田", age: 34, gender: "female" },
+    { name: "鈴木", age: 24, gender: "male" },
+    { name: "山田", age: 56, gender: "male" },
+    { name: "田中", age: 89, gender: "female" },
+  ];
+  const answer2Array = (array) => {
+    return array.map(({ name }) => name);
+  };
+  console.log("answer2", answer2Array(members));
+  console.log("ここでタイピング試せます。");
+  const ArchiMemo = () => {
+    console.log(
+      "平面構成:,木材と樹脂、ドローンでキューブ運べる、小さなプリンター、"
+    );
+  };
+  ////////////////////////////////////🎄/////////////////////////////////////////////////
+  const originArray = [...new Array(101 - 1).keys()].map((n) => n + 1 + ".");
+
+  const ChristmasTreeObject = {
+    STAR: "✴︎",
+    TREE: "*",
+    TRUNK: "#",
+    SPACE: " ",
+    Message: "🎄MerryChristmas🤶",
+  };
+  const TREE_HEIGHT = 20;
+  const TreeArray = [...new Array(TREE_HEIGHT)];
+  const Tree = TreeArray.map(
+    (_element, index) =>
+      ChristmasTreeObject.SPACE.repeat(index) +
+      ChristmasTreeObject.TREE.repeat(1 + (TREE_HEIGHT - (index + 1)) * 2)
+  );
+  const ReverseTree = [...Tree.reverse()];
+  const MakeChristmasTreeFunction = () => {
+    return (
+      console.log(
+        ChristmasTreeObject.SPACE.repeat(TREE_HEIGHT - 1) +
+          ChristmasTreeObject.STAR
+      ),
+      console.log(ReverseTree.join("\n")),
+      console.log(
+        ChristmasTreeObject.SPACE.repeat(TREE_HEIGHT - 1) +
+          ChristmasTreeObject.TRUNK
+      ),
+      console.log(
+        ChristmasTreeObject.SPACE.repeat(TREE_HEIGHT - 1) +
+          ChristmasTreeObject.TRUNK
+      ),
+      TREE_HEIGHT >= 9
+        ? console.log(
+            ChristmasTreeObject.SPACE.repeat(TREE_HEIGHT - 9) +
+              ChristmasTreeObject.Message
+          )
+        : console.log(ChristmasTreeObject.Message)
+    );
+  };
+  ////////////////////////////////////🎄/////////////////////////////////////////////////
   return (
     <>
       <Head>
@@ -27,6 +89,19 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <Header title={title} />
+        <Box>
+          <Typography
+            sx={{ textAlign: "center", width: "100%", fontSize: "40px" }}>
+            配列処理練習
+          </Typography>
+          <Box display="flex" flexWrap="wrap">
+            <Box sx={{ width: "100%" }}>ORIGIN:</Box>
+            <br />
+            {originArray.map((item, index) => {
+              return <div key={index}>{item}</div>;
+            })}
+          </Box>
+        </Box>
         <Box
           sx={{
             display: "flex",
@@ -56,6 +131,12 @@ export default function Home() {
             alert(event.target.href);
           }}>
           ボタン
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() => MakeChristmasTreeFunction()}
+          sx={{ marginTop: "2rem" }}>
+          consoleにクリスマスツリーを作成
         </Button>
         <Footer />
       </main>
