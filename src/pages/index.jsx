@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import styles from "@/src/styles/Home.module.css";
 import { Header } from "@/src/components/Header";
 import { INDEX_PAGE_TITLE } from "@/src/utils/path";
-import { Footer } from "@/src/components/Footer";
+// import { Footer } from "@/src/components/Footer";
 import { Box, Button, Typography } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -138,7 +138,7 @@ export default function Home() {
           sx={{ marginTop: "2rem" }}>
           consoleにクリスマスツリーを作成
         </Button>
-        <Footer />
+        {/* <Footer /> */}
       </main>
     </>
   );
